@@ -1,0 +1,7 @@
+.App {
+  text-align: center;
+  background: linear-gradient(to bottom, #647C93, #9ac0e3);
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
