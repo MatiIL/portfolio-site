@@ -1,8 +1,16 @@
+import { useEffect } from 'react';
+import { useAnimateContext } from '../../context/AnimationContext';
 import "./Header.css";
 
 const Header = () => {
+  const { headerVisibility } = useAnimateContext();
+
+  useEffect(() => {
+    console.log(headerVisibility)
+  }, [headerVisibility])
+
   return (
-    <div className={1 === 1 ? "" : "d-none"}>
+    <div className={headerVisibility ? "visible" : "invisible"}>
       <header className="header-fixed">
         <div className="header-limiter">
           <h1>
