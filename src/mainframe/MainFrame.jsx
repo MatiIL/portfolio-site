@@ -1,32 +1,87 @@
 import React, { useEffect, useState } from "react";
+import { useAnimateContext } from "../context/AnimationContext";
+import Introduction from "../components/header/intro/Introduction";
 import { TypeAnimation } from "react-type-animation";
-import { statementStrings } from "./statementStrings";
 import "./MainFrame.css";
 
 const MainFrame = () => {
-  return (
+  const { fileName, setFileName, headerVisibility, setHeaderVisibility } =
+    useAnimateContext();
+  const [macVisibility, setMacVisibility] = useState(true);
+
+  const handleClick = () => {
+    setHeaderVisibility(true);
+    setMacVisibility(false)
+  }
+
+  useEffect(() => {
+    if (headerVisibility) {
+      setTimeout(() => {
+        setMacVisibility(false);
+      }, 2000);
+    }
+  }, [headerVisibility]);
+
+  const codeStatements = [
+    `Welcome to my portfolio site!
+    Are you ready for some coding?`,
+    2000,
+    () => setFileName("AnimationContext"),
+    `const AnimationContextProvier = ({ children }) => {
+      const [headerVisibility, setHeaderVisibility] = useState(false);\n
+      return (
+        <AnimationContext.Provider
+         value={{
+          headerVisibility,
+          setHeaderVisibility,
+       }}
+      >
+      {children}
+      </AnimationContext.Provider>
+      )
+    }`,
+    1000,
+    () => setFileName("MainFrame.jsx"),
+    `import { useAnimateContext } from "../context/AnimationContext";\n
+    const { setHeaderVisibility } = useAnimateContext();
+    setHeaderVisibility(true);\n
+    That's it for now, see you soon!`,
+    500,
+    () => setHeaderVisibility(true),
+  ];
+
+  return macVisibility ? (
     <>
-      <div className="mac mt-5">
+      <div className="mac">
         <div className="sublime">
-          <center>MainFrame.jsx</center>
+          <center>{fileName}</center>
         </div>
         <code>
           <TypeAnimation
             style={{
               whiteSpace: "pre-line",
               height: "195px",
-              width: "200px",
+              width: "300px",
               display: "inline-block",
-              textAlign: "justify",
+              textAlign: "start",
             }}
-            sequence={[statementStrings, 1000]}
+            sequence={codeStatements}
+            speed={80}
+            deletionSpeed={100}
             repeat={0}
           />
         </code>
       </div>
 
       <div className="stand"></div>
+      <div 
+      onClick={handleClick}
+      className="skip text-light mt-3 text-decoration-underline">
+        skip intro
+      </div>
     </>
+  ) : (
+    <Introduction />
   );
 };
 

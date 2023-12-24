@@ -1,13 +1,16 @@
-import Header from './components/Header';
+import AnimationContextProvider from './context/AnimationContext';
+import Header from './components/header/Header';
 import MainFrame from './mainframe/MainFrame';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <AnimationContextProvider>
+      <div className="App">
       <Header />
       <MainFrame />
     </div>
+    </AnimationContextProvider>
   );
 }
 
