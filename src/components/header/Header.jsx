@@ -1,28 +1,55 @@
-import { useEffect } from 'react';
-import { useAnimateContext } from '../../context/AnimationContext';
+import { useEffect } from "react";
+import { Link, Events } from "react-scroll";
+import { useAnimateContext } from "../../context/AnimationContext";
 import "./Header.css";
 
 const Header = () => {
   const { headerVisibility } = useAnimateContext();
 
   useEffect(() => {
-    console.log(headerVisibility)
-  }, [headerVisibility])
+    Events.scrollEvent.register('end', function(to, element) {
+      console.log('end', to, element);
+    });
+  }, [headerVisibility]);
 
   return (
-    <div className={headerVisibility ? "visible" : "invisible"}>
+    <div 
+    id="nav"
+    className={headerVisibility ? "visible position-relative w-100" : "invisible top-0"}>
       <header className="header-fixed">
         <div className="header-limiter">
-          <h1>
-            <a href="#">
+          <h1 className="position-fixed">
+            <Link 
+            activeClass="active" 
+            to="nav" 
+            spy={true} 
+            smooth={true}
+            duration={300}
+            >
               Mati<span>Web</span>
-            </a>
+            </Link>
           </h1>
-
           <nav>
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+            <Link 
+            to="about" 
+            spy={true} 
+            smooth={true}
+            duration={300}
+            >
+              About
+            </Link>
+            <Link
+            to="projects"
+            spy={true} 
+            smooth={true}
+            duration={300}
+            >Projects</Link>
+            <Link
+            to="contact"
+            spy={true} 
+            smooth={true}
+            duration={300}
+            >Contact</Link>
           </nav>
         </div>
       </header>
@@ -30,7 +57,6 @@ const Header = () => {
       <div className="header-fixed-placeholder"></div>
     </div>
   );
-  
 };
 
 export default Header;

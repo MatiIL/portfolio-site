@@ -1,5 +1,5 @@
-.wrapper {
-  background: linear-gradient(to bottom, #8d8e8f, #6b6d70);
+#hero {
+  height: 100vh;
 }
 code {
   font-size: 10px;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useAnimateContext } from "../context/AnimationContext";
-import Introduction from "../components/header/intro/Introduction";
+import { useAnimateContext } from "../../context/AnimationContext";
+import Introduction from "./intro/Introduction";
 import { TypeAnimation } from "react-type-animation";
-import "./MainFrame.css";
+import "./HeroSection.css";
 
 const MainFrame = () => {
   const { fileName, setFileName, headerVisibility, setHeaderVisibility } =
@@ -11,8 +11,8 @@ const MainFrame = () => {
 
   const handleClick = () => {
     setHeaderVisibility(true);
-    setMacVisibility(false)
-  }
+    setMacVisibility(false);
+  };
 
   useEffect(() => {
     if (headerVisibility) {
@@ -50,38 +50,43 @@ const MainFrame = () => {
     () => setHeaderVisibility(true),
   ];
 
-  return macVisibility ? (
-    <>
-      <div className="mac">
-        <div className="sublime">
-          <center>{fileName}</center>
-        </div>
-        <code>
-          <TypeAnimation
-            style={{
-              whiteSpace: "pre-line",
-              height: "195px",
-              width: "300px",
-              display: "inline-block",
-              textAlign: "start",
-            }}
-            sequence={codeStatements}
-            speed={80}
-            deletionSpeed={100}
-            repeat={0}
-          />
-        </code>
-      </div>
+  return (
+    <div id="hero">
+      {macVisibility ? (
+        <>
+          <div className="mac">
+            <div className="sublime">
+              <center>{fileName}</center>
+            </div>
+            <code>
+              <TypeAnimation
+                style={{
+                  whiteSpace: "pre-line",
+                  height: "195px",
+                  width: "300px",
+                  display: "inline-block",
+                  textAlign: "start",
+                }}
+                sequence={codeStatements}
+                speed={80}
+                deletionSpeed={100}
+                repeat={0}
+              />
+            </code>
+          </div>
 
-      <div className="stand"></div>
-      <div 
-      onClick={handleClick}
-      className="skip text-light mt-3 text-decoration-underline">
-        skip intro
-      </div>
-    </>
-  ) : (
-    <Introduction />
+          <div className="stand"></div>
+          <div
+            onClick={handleClick}
+            className="skip text-light mt-3 text-decoration-underline"
+          >
+            skip intro
+          </div>
+        </>
+      ) : (
+        <Introduction />
+      )}
+    </div>
   );
 };
 

@@ -1,6 +1,9 @@
 import AnimationContextProvider from './context/AnimationContext';
 import Header from './components/header/Header';
-import MainFrame from './mainframe/MainFrame';
+import HeroSection from './sections/hero/HeroSection';
+import AboutSection from './sections/about/AboutSection';
+import ProjectSection from './sections/projects/ProjectSection';
+import ContactSection from './sections/contact/ContactSection';
 import './App.css';
 
 function App() {
@@ -8,7 +11,10 @@ function App() {
     <AnimationContextProvider>
       <div className="App">
       <Header />
-      <MainFrame />
+      <HeroSection />
+      <AboutSection />
+      <ProjectSection />
+      <ContactSection />
     </div>
     </AnimationContextProvider>
   );
