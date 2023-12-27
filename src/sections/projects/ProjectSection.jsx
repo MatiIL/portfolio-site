@@ -1,16 +1,11 @@
 import ProjectModal from "./ProjectModal";
 import { useState } from "react";
 import { projectsArray } from "./projectsArray";
-import { Carousel, Image, Button, ButtonGroup } from "react-bootstrap";
+import { Carousel, Image } from "react-bootstrap";
 import "./ProjectSection.css";
 
 const ProjectSection = () => {
   const [modalShow, setModalShow] = useState();
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
 
   return (
     <>
@@ -22,13 +17,16 @@ const ProjectSection = () => {
         <div className="">
           <Carousel 
           className="mt-3" 
-          indicators={false}
+          controls={false}
           >
             {projectsArray.length > 0 &&
               projectsArray.map((project) => (
-                <Carousel.Item key={project.key}>
+                <Carousel.Item 
+                key={project.key}
+                interval={2000}
+                >
                   <Image
-                    className="project-img w-75"
+                    className="w-75"
                     src={project.imageSrc}
                     thumbnail
                     fluid

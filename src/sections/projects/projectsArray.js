@@ -25,8 +25,8 @@ export const projectsArray = [
     },
     {
         key: 3,
-        imageSrc: "../payNroll2.png",
-        name: "Infinite Photos App",
+        imageSrc: "../gallery-app.png",
+        name: "Infinity Gallery",
         shortDescription: "a React web application that fetches & displays a photo gallery in a responsive grid layout",
         details: {
             longDescription: "",
@@ -37,7 +37,7 @@ export const projectsArray = [
     },
     {
         key: 4,
-        imageSrc: "../pet-adopt.png",
+        imageSrc: "../pet-app.png",
         name: "Pet Adoption Center",
         shortDescription: "My first-ever fullstack and deployed project! developed during ITC's Fullstack Dev Bootcamp",
         details: {

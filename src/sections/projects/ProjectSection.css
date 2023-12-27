@@ -1,20 +1,16 @@
 .projects-wrapper {
     height: 100vh;
 }
-
-.project-img {
-    opacity: 0.9;
-}
-
 .details-btn {
     background-color: #F8F9FA;
     border: 1px solid black;
     border-radius: 5px;
     width: 100px;
-    padding: 3px 6px 3px 3px;
+    padding: 3px;
     font-size: smaller;
+    float: inline-end;
+    margin-right: 2em;
 }
-
 .carousel-control-next-icon {
     display: none;
 }
