@@ -51,7 +51,7 @@ const MainFrame = () => {
   ];
 
   return (
-    <div id="hero">
+    <div className="hero">
       {macVisibility ? (
         <>
           <div className="mac">

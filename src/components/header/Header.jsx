@@ -1,26 +1,23 @@
 import { useEffect } from "react";
-import { Link, Events } from "react-scroll";
+import { Link } from "react-scroll";
 import { useAnimateContext } from "../../context/AnimationContext";
 import "./Header.css";
 
 const Header = () => {
-  const { headerVisibility } = useAnimateContext();
+  const { headerVisibility } = useAnimateContext();;
 
   useEffect(() => {
-    Events.scrollEvent.register('end', function(to, element) {
-      console.log('end', to, element);
-    });
+
   }, [headerVisibility]);
 
   return (
     <div 
     id="nav"
-    className={headerVisibility ? "visible position-relative w-100" : "invisible top-0"}>
+    className={headerVisibility ? "visible position-fixed w-100" : "invisible top-0"}>
       <header className="header-fixed">
         <div className="header-limiter">
-          <h1 className="position-fixed">
-            <Link 
-            activeClass="active" 
+          <h1 className="brand">
+            <Link  
             to="nav" 
             spy={true} 
             smooth={true}

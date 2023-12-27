@@ -6,7 +6,7 @@ import "./Introduction.css";
 const Introduction = () => {
     const [showParagraph, setShowParagraph] = useState(false);
   return (
-    <Container className="mt-5">
+    <Container className="" id="hero">
       <Row>
         <Col>
           <div className="text-light">

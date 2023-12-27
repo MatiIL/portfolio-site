@@ -10,7 +10,9 @@ function App() {
   return (
     <AnimationContextProvider>
       <div className="App">
+        <div className='header' id="nav">
       <Header />
+      </div>
       <HeroSection />
       <AboutSection />
       <ProjectSection />

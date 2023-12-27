@@ -2,7 +2,7 @@ import './ContactSection.css';
 
 const ContactSection = () => {
     return (
-        <div className='contact-wrapper text-light'>
+        <div className='contact-wrapper text-light d-flex flex-column justify-content-center'>
         <h1 id="contact">
             Contact
         </h1>

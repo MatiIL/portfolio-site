@@ -1,3 +1,16 @@
 .projects-wrapper {
     height: 100vh;
 }
+
+.project-details {
+    border: 1px solid azure;
+    border-radius: 5px;
+    width: 100px;
+    padding: 3px 6px 3px 6px;
+}
+
+.project-details:hover {
+    background-color: azure;
+    color: black;
+    cursor: pointer;
+}

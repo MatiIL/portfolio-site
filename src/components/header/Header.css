@@ -6,6 +6,7 @@
 	box-sizing: border-box;
 	-webkit-transition:top 0.3s;
 	transition:top 0.3s;
+	opacity: 0.5;
 }
 
 .header-fixed .header-limiter {
@@ -42,6 +43,16 @@
 	text-decoration: none;
 }
 
+.header-fixed .header-limiter a:hover {
+	cursor: pointer;
+	color: #5383d3;
+}
+
+.header-fixed .header-limiter a.active {
+	cursor: none;
+	color: #ffffff;
+}
+
 .header-fixed .header-limiter nav {
 	font:16px Arial, Helvetica, sans-serif;
 	line-height: 40px;
@@ -58,6 +69,8 @@
 
 .header-fixed .header-limiter nav a:hover{
 	opacity: 1;
+	color: #d7b95e;
+	cursor: pointer;
 }
 
 .header-fixed .header-limiter nav a.selected {
