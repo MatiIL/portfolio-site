@@ -2,15 +2,19 @@
     height: 100vh;
 }
 
-.project-details {
-    border: 1px solid azure;
-    border-radius: 5px;
-    width: 100px;
-    padding: 3px 6px 3px 6px;
+.project-img {
+    opacity: 0.9;
 }
 
-.project-details:hover {
-    background-color: azure;
-    color: black;
-    cursor: pointer;
+.details-btn {
+    background-color: #F8F9FA;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+    padding: 3px 6px 3px 3px;
+    font-size: smaller;
+}
+
+.carousel-control-next-icon {
+    display: none;
 }

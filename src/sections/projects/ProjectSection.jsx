@@ -1,10 +1,16 @@
 import ProjectModal from "./ProjectModal";
 import { useState } from "react";
-import { Carousel, Image } from "react-bootstrap";
+import { projectsArray } from "./projectsArray";
+import { Carousel, Image, Button, ButtonGroup } from "react-bootstrap";
 import "./ProjectSection.css";
 
 const ProjectSection = () => {
   const [modalShow, setModalShow] = useState();
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
 
   return (
     <>
@@ -12,24 +18,37 @@ const ProjectSection = () => {
         id="projects"
         className="projects-wrapper text-light d-flex flex-column justify-content-center "
       >
-        <h1>Projects</h1>
-        <Carousel className="mt-3">
-          <Carousel.Item>
-            <Image className="w-75" src="../payNroll2.png" thumbnail fluid />
-          </Carousel.Item>
-        </Carousel>
-        <h3 className="mt-3">payNroll</h3>
-        <p>
-          Fantasy Basketball gaming platform, used by me and 10 other league
-          members.
-        </p>
-        <div
-          className="project-details mx-auto"
-          onClick={() => setModalShow(true)}
-        >
-          View Details
+        <h1>My Projects Portfolio</h1>
+        <div className="">
+          <Carousel 
+          className="mt-3" 
+          indicators={false}
+          >
+            {projectsArray.length > 0 &&
+              projectsArray.map((project) => (
+                <Carousel.Item key={project.key}>
+                  <Image
+                    className="project-img w-75"
+                    src={project.imageSrc}
+                    thumbnail
+                    fluid
+                  />
+                  <Carousel.Caption>
+                  </Carousel.Caption>
+                  <div 
+                  className="text-dark details-btn d-inline-flex justify-content-center ms-2 mt-3"
+                  onClick={() => setModalShow(true)}
+                  ><span>
+                    View Details
+
+                  </span>
+                    </div>
+                </Carousel.Item>
+              ))}
+          </Carousel>
         </div>
       </div>
+
       <ProjectModal show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );
