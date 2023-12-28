@@ -78,7 +78,7 @@ const MainFrame = () => {
           <div className="stand"></div>
           <div
             onClick={handleClick}
-            className="skip text-light mt-3 text-decoration-underline"
+            className="skip mt-3 text-decoration-underline"
           >
             skip intro
           </div>

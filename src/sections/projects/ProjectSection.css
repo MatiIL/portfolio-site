@@ -1,16 +1,87 @@
 .projects-wrapper {
-    height: 100vh;
+  height: 100vh;
+}
+.projects-array {
+    color: rgb(36, 161, 239);
+}
+.map-method {
+    color: rgb(234, 234, 147);
+}
+.outer-parantheses {
+   color: rgb(215, 199, 26);
+}
+.inner-parantheses {
+  color: rgb(193, 34, 193);
+}
+.project-param {
+  color: #8ccfe8;
 }
 .details-btn {
-    background-color: #F8F9FA;
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 100px;
-    padding: 3px;
-    font-size: smaller;
-    float: inline-end;
-    margin-right: 2em;
+  background: radial-gradient(circle, #8a8b8e, #aeb2b5, #d8dadc);
+  color: rgb(37, 36, 36);
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  padding: 3px;
+  font-size: smaller;
+  font-weight: bolder;
+  text-shadow: 1px 1px #767171;
+  float: inline-end;
+  margin-right: 2em;
+  cursor: pointer;
+}
+.details-btn:hover {
+  background: radial-gradient(circle, #d8dadc, #aeb2b5, #8a8b8e);
+  border: 2px solid rgb(255, 119, 0);
+  color: rgb(255, 119, 0);
 }
 .carousel-control-next-icon {
-    display: none;
+  display: none;
+}
+.modal-fullscreen .modal-content {
+  background: linear-gradient(to right, #151515, #161714);
+  font-family: 'Consolas', 'Courier New', monospace;
+}
+#contained-modal-title-vcenter {
+    color: rgb(49, 183, 127);
+}
+.long-description {
+    color: #8ccfe8;
+  
+}
+.modal-header .btn-close {
+}
+
+.modal-close-btn {
+  background: radial-gradient(circle, #8a8b8e, #aeb2b5, #d8dadc);
+  color: rgb(37, 36, 36);
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  padding: 3px;
+  font-size: smaller;
+  font-weight: bolder;
+  text-shadow: 1px 1px #767171;
+  float: inline-end;
+  margin-right: 2em;
+  cursor: pointer;
+}
+.modal-close-btn:hover {
+  background: radial-gradient(circle, #d8dadc, #aeb2b5, #8a8b8e);
+  color: rgb(255, 119, 0);
+}
+.stack {
+  background-color: #193756;
+  border-radius: 5px;
+  width: max-content;
+}
+.technology {
+  font-size: smaller;
+  color: turquoise;
+}
+.modal-footer {
+  border-top: none;
+}
+.visit {
+  cursor: pointer;
 }

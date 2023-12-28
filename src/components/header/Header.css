@@ -1,7 +1,7 @@
 .header-fixed {
 	background: linear-gradient(to bottom, #3c3e38, #1B1C18);
 	padding: 20px 40px;
-	height: 80px;
+	height: 60px;
 	color: #ffffff;
 	box-sizing: border-box;
 	-webkit-transition:top 0.3s;
