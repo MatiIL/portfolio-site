@@ -57,6 +57,7 @@ export const projectsArray = [
     name: "Pet Adoption Center",
     shortDescription:
       "My first-ever fullstack and deployed project! developed during ITC's Fullstack Dev Bootcamp",
+      codeImage: "../pet-app-code.png",
     longDescription: "",
     technologicalStack: [
       { key: 1, name: "React" },
