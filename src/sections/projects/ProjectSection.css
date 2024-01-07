@@ -47,11 +47,7 @@
 }
 .long-description {
     color: #8ccfe8;
-  
-}
-.modal-header .btn-close {
-}
-
+}  
 .modal-close-btn {
   background: radial-gradient(circle, #8a8b8e, #aeb2b5, #d8dadc);
   color: rgb(37, 36, 36);
@@ -82,6 +78,56 @@
 .modal-footer {
   border-top: none;
 }
-.visit {
-  cursor: pointer;
+.code-img {
+  width: 100%;
+}
+.project-info {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  background-color: #161714;
+}
+.accordion__button {
+  background-color: #161714;
+  color: whitesmoke;
+}
+.accordion__button:hover {
+  background-color: #31322e;
+  color: whitesmoke;
+}
+.accordion__panel {
+  font-size: smaller;
+}
+.custom-zoom [data-rmiz-modal-overlay="hidden"] {
+  background-color: rgba(27, 27, 37, 0);
+}
+.custom-zoom [data-rmiz-modal-overlay="visible"] {
+  background-color: rgb(24, 25, 32);
+}
+.custom-zoom [data-rmiz-btn-unzoom] {
+  background-color: #262429;
+  color: #000;
+}
+.custom-zoom [data-rmiz-btn-unzoom]:focus-visible {
+  outline-offset: 0.4rem;
+  outline: 0.2rem solid #1e1b21;
+}
+@media screen and (max-width: 1100px) {
+  .d-flex.modal-body {
+    flex-direction: column;
+  }
+  .project-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 808px) {
+  .stack-wrapper {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 404px) {
+  .carousel-indicators {
+    position: relative;
+  }
 }

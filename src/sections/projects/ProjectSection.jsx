@@ -2,6 +2,7 @@ import ProjectModal from "./ProjectModal";
 import { useState } from "react";
 import { projectsArray } from "./projectsArray";
 import { Carousel, Image } from "react-bootstrap";
+import { Tooltip } from 'react-tooltip';
 import "./ProjectSection.css";
 
 const ProjectSection = () => {
@@ -27,17 +28,28 @@ const ProjectSection = () => {
             </div>
             </div>
         <div>
-          <Carousel className="mt-3" controls={false} pause={false}>
+          <Carousel 
+          className="mt-3" 
+          controls={false} 
+          interval={1500}
+          slide={true}
+          wrap={true}
+          pause='hover'
+          >
             {projectsArray.length > 0 &&
               projectsArray.map((project) => (
-                <Carousel.Item key={project.key} interval={2500}>
+                <Carousel.Item key={project.key} >
                   <Image
                     className="w-75"
                     src={project.imageSrc}
                     thumbnail
                     fluid
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={project.shortDescription}
+                    data-tooltip-delay-show={500}
                   />
                   <Carousel.Caption></Carousel.Caption>
+                  
                   <div
                     className="details-btn d-inline-flex justify-content-center ms-2 mt-3"
                     onMouseEnter={() => setProjectDetails(project)}
@@ -53,6 +65,7 @@ const ProjectSection = () => {
                 </Carousel.Item>
               ))}
           </Carousel>
+          <Tooltip id="my-tooltip" place="right"/>
         </div>
         <div className="fs-3 align-self-center mt-3">
           <span className="inner-parantheses">{')'}</span>
